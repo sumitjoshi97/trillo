@@ -17,7 +17,7 @@ Grey dark 3: #999
 */
 :root {
   --color-primary: #eb2f64;
-  --color-primary-light: #FF3366;
+  --color-primary-light: #ff4d79;
   --color-primary-dark: #BA265D;
   --color-grey-light-1: #faf9f9;
   --color-grey-light-2: #f4f2f2;
@@ -71,7 +71,11 @@ body {
 
 .sidebar {
   background-color: var(--color-grey-dark-1);
-  flex: 0 0 20%; }
+  flex: 0 0 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh; }
 
 .hotel-view {
   background-color: #fff;
@@ -155,3 +159,51 @@ body {
     height: 3rem;
     width: 3rem;
     border-radius: 50%; }
+
+.side-nav {
+  list-style: none;
+  margin-top: 3.5rem;
+  font-size: 1.4rem; }
+  .side-nav__item {
+    padding: 1.5rem 3rem;
+    position: relative; }
+    .side-nav__item:not(:last-child) {
+      margin-bottom: 0.5rem; }
+  .side-nav__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+    transition: transform 0.1s, width 0.4s 0.1s cubic-bezier(1, 0, 0, 1); }
+  .side-nav__item:hover::before, .side-nav__item-active::before {
+    transform: scaleY(1);
+    width: 100%; }
+  .side-nav__item:active::before {
+    background-color: var(--color-primary-light); }
+  .side-nav__link:link, .side-nav__link:visited {
+    position: relative;
+    text-decoration: none;
+    color: var(--color-grey-light-1);
+    text-transform: uppercase;
+    display: block;
+    display: flex;
+    align-items: center;
+    z-index: 100; }
+  .side-nav__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 2rem;
+    color: var(--color-grey-light-1);
+    fill: currentColor; }
+  .side-nav ::selection {
+    background-color: transparent; }
+
+.legal {
+  font-size: 1.2rem;
+  color: var(--color-grey-light-4);
+  padding: 2.5rem;
+  text-align: center; }
