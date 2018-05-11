@@ -55,7 +55,7 @@
 /////////////////////////////////////////////
 //user navigation
 .user-nav {
-    background-color: var(--color-grey-dark-1);
+    // background-color: var(--color-grey-dark-1);
     display: flex;
     align-items: center;
     &>* {
@@ -78,7 +78,7 @@
     &__icon {
         height: 2.2rem;
         width: 2.2rem;
-        fill: var(--color-grey-light-2);
+        fill: var(--color-grey-dark-3);
     }
     &__icon-box:hover &__icon {
         fill: var(--color-grey-dark-1)
@@ -177,4 +177,120 @@
     color: var(--color-grey-light-4);
     padding: 2.5rem;
     text-align: center;
+}
+
+//////////////////////////////////////////////////
+//hotel - gallery
+
+.gallery {
+    display: flex;
+
+    &__photo {
+        width: 100%;
+
+    }
+}
+
+///////////////////////////////////
+//overview
+.overview {
+    display: flex;
+    align-items: center;
+    // flex-direction: row;
+    // justify-content: space-between;
+    // justify-content: space-between;
+
+    &__heading{
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1.5rem 3rem; 
+    }
+
+    &__stars {
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon__star,
+    &__icon__location {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-primary)
+    }   
+    
+    &__location {
+        display: flex;
+        font-size: 1.2rem;
+        vertical-align: center;
+    }
+    &__rating{
+        background-color: var(--color-primary);
+        margin-left: 3rem;
+        color: #fff;
+        padding: 0 2.25rem;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &-average{
+            font-size: 2.25rem;
+            font-weight: 300;
+            margin-bottom: -3px;
+        }
+        &-count{
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+    }
+
+
+}
+
+
+
+//////////////////////////////////
+//button 
+.btn-inline {
+    color: var(--color-primary);
+    background-color: transparent;
+    border: none;
+    font-size: inherit;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.2s;   
+    
+    
+    &:hover {
+        color: var(--color-grey-dark-1);
+        animation: pulsate 1s infinite;
+    }
+
+    &:focus {
+        outline: none;
+        
+    }
+}
+
+
+//animation button plse
+@keyframes pulsate {
+    0%{
+        transform: scale(1);
+        box-shadow: none;
+    }
+    60%{
+        transform: scale(1.05);
+        box-shadow: 0 1rem 4rem rgba(#000, 0.25);
+    }
+    100%{
+        transform: scale(1);
+        box-shadow: none;
+    }
 }
